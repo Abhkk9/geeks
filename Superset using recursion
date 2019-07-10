@@ -1,0 +1,23 @@
+//Superset using recursion
+class LexSort
+{
+    // complete the function
+   public static ArrayList<String> powerSet(String s)
+	    {
+	        // add your code here
+		 ArrayList<String> Powerset = new ArrayList<String>();
+		 string_set(Powerset,s, "", 0);
+	     return Powerset; 
+	    }
+	 public static void string_set(ArrayList<String> Powerset,String a, String curr , int index ) {
+			if(a.length()==index)
+			{
+				Powerset.add(curr+"");
+			    return;
+			}
+			string_set(Powerset,a, curr+""+a.charAt(index), index+1);
+			string_set(Powerset,a, curr, index+1);
+			
+		}
+}
+ 

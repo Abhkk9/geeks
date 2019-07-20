@@ -1,0 +1,40 @@
+  // https://practice.geeksforgeeks.org/problems/smallest-positive-missing-number/1/?track=SPC-Arrays&batchId=140
+  
+  Smallest Positive missing number 
+  
+  class Missing{
+    
+    // function to find first positive missing number
+    static int missingNumber(int arr[], int size)
+    {
+        int i=0;
+    if(size==1)
+    {
+        
+        if(arr[0]==1)
+        return 2;else
+        return 1;
+    }
+        int count=0;
+        Arrays.sort(arr);
+        for( i=size-1;i>=0;i--)
+        {
+            if(arr[i]>0)
+            count++;
+            
+        }
+        i=1;
+        for(int j=size-count;j<size;j++)
+        {
+        if(arr[j]==arr[j+1])
+        continue;
+            if(arr[j]!=i )
+            return i;
+            i++;
+        }
+        return i;
+        
+        
+    }
+    
+}
